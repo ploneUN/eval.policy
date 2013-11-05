@@ -33,6 +33,7 @@ setup(name='eval.policy',
           'collective.dexteritytextindexer',
           'plone.app.multilingual',
           'plone.multilingualbehavior',
+          'ploneun.policy',
           # -*- Extra requirements: -*-
       ],
       extras_require={
