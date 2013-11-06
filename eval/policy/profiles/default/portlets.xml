@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<portlets>
+
+    <!-- -*- extra stuff goes here -*- -->
+
+    <portlet 
+        addview="eval.policy.portlet.MissionReportStatistics"
+        title="Mission Report Statistics"
+        description=""/>
+
+</portlets>

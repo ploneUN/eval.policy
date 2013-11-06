@@ -1,0 +1,19 @@
+<configure xmlns="http://namespaces.zope.org/zope"
+           xmlns:plone="http://namespaces.plone.org/plone"
+           xmlns:i18n="http://namespaces.zope.org/i18n"
+           i18n_domain="ploneun.missions">
+
+    <include package="plone.app.portlets" file="permissions.zcml"/>
+    <!-- -*- extra stuff goes here -*- -->
+
+
+    <plone:portlet
+        name="eval.policy.portlet.MissionReportStatistics"
+        interface=".missionreportstatistics.IMissionReportStatistics"
+        assignment=".missionreportstatistics.Assignment"
+        renderer=".missionreportstatistics.Renderer"
+        addview=".missionreportstatistics.AddForm"
+        editview=".missionreportstatistics.EditForm"
+        />
+
+</configure>
