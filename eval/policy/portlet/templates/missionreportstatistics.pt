@@ -7,7 +7,51 @@
         <span class="portletTopRight"></span>
     </dt>
 
-    <dd class="portletItem">
+    <dd class="portletItem" tal:define="data view/cache">
+        <div>
+            <h2>Total: <span tal:content="data/total"></span></h2>
+            International: <span tal:content="data/international_count"></span><br/>
+            Domestic: <span tal:content="data/domestic_count"></span><br />
+        </div>
+        <table width="100%" class="grid listing">
+            <caption><b>Top Themes</b></caption>
+            <tal:block repeat="themerow data/themes">
+                <tal:block define="index repeat/themerow/index">
+                    <tr>
+                        <th colspan="3"><span tal:content="python: view.theme_title(data['themes'][index][0])"></span></th>
+                    </tr>
+                    <tr>
+                        <td>International</td>
+                        <td>Domestic</td>
+                        <td>Total</td>
+                    </tr>
+                    <tr style="text-align:center;">
+                        <td tal:content="python: data['themes_international'][index][1]"></td>
+                        <td tal:content="python: data['themes_domestic'][index][1]"></td>
+                        <td tal:content="python: data['themes'][index][1]"></td>
+                    </tr>
+                </tal:block>
+            </tal:block>
+        </table>
+        <h2>Top International Destinations</h2>
+
+        <ul>
+            <li  tal:repeat="item data/international">
+                <span tal:content="python:view.country_title(item[0])"></span>
+                (<span
+                    tal:content="python:item[1]"></span>)
+            </li>
+        </ul>
+
+        <h2>Top Domestic Destinations</h2>
+        <ul>
+            <li  tal:repeat="item data/domestic">
+                <span tal:content="python:view.country_title(item[0])"></span>
+                (<span
+                    tal:content="python:item[1]"></span>)
+            </li>
+        </ul>
+
     </dd>
 
     <dd class="portletFooter">

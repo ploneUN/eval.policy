@@ -13,6 +13,8 @@
     <grok:grok package="." />
     <i18n:registerTranslations directory="locales" />
 
+    <include package=".portlet"/>
+
     <!-- -*- extra stuff goes here -*- -->
 
 </configure>
