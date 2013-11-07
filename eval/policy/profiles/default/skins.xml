@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<object name="portal_skins">
+    <object name="eval_policy"
+        meta_type="Filesystem Directory View"
+        directory="eval.policy:skins/eval_policy"/>
+    <skin-path name="*">
+        <layer name="eval_policy"
+                insert-after="custom"/>
+    </skin-path>
+</object>

@@ -33,5 +33,6 @@
 
 
     <!-- -*- extra stuff goes here -*- -->
+    <cmf:registerDirectory name="eval_policy"/>
 
 </configure>
