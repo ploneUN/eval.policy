@@ -10,6 +10,7 @@
     <dd class="portletItem" tal:define="data view/cache">
         <div>
             <h2>Total: <span tal:content="data/total"></span></h2>
+        <h3>Missions With Reports: <span tal:content="data/percent_missions_with_reports"></span>%</h3>
             International: <span tal:content="data/international_count"></span><br/>
             Domestic: <span tal:content="data/domestic_count"></span><br />
         </div>
@@ -51,6 +52,8 @@
                     tal:content="python:item[1]"></span>)
             </li>
         </ul>
+
+
 
     </dd>
 

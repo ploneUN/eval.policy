@@ -87,6 +87,9 @@ class Renderer(base.Renderer):
         cache['themes_domestic'] = self._themes_domestic()
         cache['domestic'] = self._domestic()
         cache['international'] = self._international()
+        cache['percent_missions_with_reports'] = (
+            self._percent_missions_with_reports()
+        )
 
     def cache(self):
         if (self.request.get('force_statsportlet_update', None) or 
@@ -206,11 +209,10 @@ class Renderer(base.Renderer):
             },
             'portal_type': 'ploneun.missions.missionreport',
 # XXX enable this later
-#            'review_state': 'internally_published'
+            'review_state': 'internally_published'
         }
         query.update(kwargs)
         return self.context.portal_catalog(query)
-
 
     def _total(self):
         reports = self._search()
@@ -244,6 +246,10 @@ class Renderer(base.Renderer):
         reports = self._search(ploneun_missionscope='International')
         return self._top_three_countries(reports)
 
+    def _percent_missions_with_reports(self):
+        all_reports = self._search()
+        submitted_reports = self._search(ploneun_has_missionreport=True)
+        return int((len(submitted_reports) * 1.0)/len(all_reports) * 100)
 
 
 class AddForm(base.AddForm):
