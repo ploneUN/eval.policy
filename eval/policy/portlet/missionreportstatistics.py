@@ -247,9 +247,11 @@ class Renderer(base.Renderer):
         return self._top_three_countries(reports)
 
     def _percent_missions_with_reports(self):
-        all_reports = self._search()
-        submitted_reports = self._search(ploneun_has_missionreport=True)
-        return int((len(submitted_reports) * 1.0)/len(all_reports) * 100)
+        all_missions = self._search(portal_type='ploneun.missions.mission')
+        missions_with_reports = self._search(
+                portal_type='ploneun.missions.mission',
+                ploneun_has_missionreport=True)
+        return int((len(missions_with_reports) * 1.0)/len(all_missions) * 100)
 
 
 class AddForm(base.AddForm):
