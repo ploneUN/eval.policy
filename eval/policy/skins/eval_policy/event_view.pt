@@ -130,7 +130,8 @@
                         <th>Themes</th>
                         <td>
                             <ul>
-                                <li tal:repeat="item context/ilo_themes"></li>
+                                <li tal:repeat="item context/ilo_themes"
+                                    tal:content="item"></li>
                             </ul>
                         </td>
                     </tr>
@@ -138,7 +139,8 @@
                         <th>Regions</th>
                         <td>
                             <ul>
-                                <li tal:repeat="item context/ilo_regions"></li>
+                                <li tal:repeat="item context/ilo_regions"
+                                    tal:content="item"></li>
                             </ul>
                         </td>
                     </tr>
