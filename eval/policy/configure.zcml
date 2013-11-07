@@ -15,6 +15,23 @@
 
     <include package=".portlet"/>
 
+    <class class="Products.ATContentTypes.content.file.ATFile">
+       <implements interface="ilo.extenders.interfaces.IILOThemeEnabled"/>
+    </class>
+
+    <class class="plone.app.blob.content.ATBlob">
+       <implements interface="ilo.extenders.interfaces.IILOThemeEnabled"/>
+    </class>
+
+    <class class="Products.ATContentTypes.content.event.ATEvent">
+       <implements interface="ilo.extenders.interfaces.IILOThemeEnabled"/>
+    </class>
+
+    <class class="Products.ATContentTypes.content.event.ATEvent">
+       <implements interface="ilo.extenders.interfaces.IILORegionsEnabled"/>
+    </class>
+
+
     <!-- -*- extra stuff goes here -*- -->
 
 </configure>
