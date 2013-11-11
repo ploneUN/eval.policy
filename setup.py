@@ -34,6 +34,7 @@ setup(name='eval.policy',
           'plone.app.multilingual',
           'plone.multilingualbehavior',
           'ploneun.policy',
+          'eval.theme',
           # -*- Extra requirements: -*-
       ],
       extras_require={
