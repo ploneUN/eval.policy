@@ -35,6 +35,7 @@ setup(name='eval.policy',
           'plone.multilingualbehavior',
           'ploneun.policy',
           'eval.theme',
+          'ilo.publications',
           # -*- Extra requirements: -*-
       ],
       extras_require={
