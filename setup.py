@@ -36,6 +36,7 @@ setup(name='eval.policy',
           'ploneun.policy',
           'eval.theme',
           'ilo.publications',
+          'sinarngo.resource',
           # -*- Extra requirements: -*-
       ],
       extras_require={
