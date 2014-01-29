@@ -37,6 +37,7 @@ setup(name='eval.policy',
           'eval.theme',
           'ilo.publications',
           'sinarngo.resource',
+          'ilo.goodpractice',
           # -*- Extra requirements: -*-
       ],
       extras_require={
