@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.0a10 (unreleased)
+1.0a10 (2014-09-26)
 -------------------
 
 - Bump version, package wasn't released
