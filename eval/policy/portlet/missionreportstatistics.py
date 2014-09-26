@@ -207,7 +207,7 @@ class Renderer(base.Renderer):
                 'query': '/'.join(facility.getPhysicalPath()),
                 'depth': 10
             },
-            'portal_type': 'ploneun.missions.missionreport',
+            'portal_type': 'ploneun.missions.mission',
 # XXX enable this later
             'review_state': 'internally_published'
         }
@@ -227,7 +227,7 @@ class Renderer(base.Renderer):
         return len(reports)
 
     def _themes(self):
-        reports = self._search()
+        reports = self._search(ploneun_missionscope='International')
         return self._top_three_themes(reports)
 
     def _themes_international(self):

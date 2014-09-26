@@ -4,7 +4,7 @@ Changelog
 1.0a9 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Fix Mission Reports Statistics Portlet
 
 
 1.0a8 (2014-01-29)
