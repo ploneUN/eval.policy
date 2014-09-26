@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.0a9 (unreleased)
+1.0a9 (2014-09-26)
 ------------------
 
 - Fix Mission Reports Statistics Portlet
