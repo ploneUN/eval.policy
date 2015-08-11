@@ -1,10 +1,11 @@
 Changelog
 =========
 
+
 1.0a11 (unreleased)
 -------------------
 
-- Nothing changed yet.
+- Add atreal.usersinout as a requirement
 
 
 1.0a10 (2014-09-26)
