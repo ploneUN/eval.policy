@@ -38,6 +38,7 @@ setup(name='eval.policy',
           'ilo.publications',
           'sinarngo.resource',
           'ilo.goodpractice',
+          'atreal.usersinout',
 	  'collective.kuputabs',
           # -*- Extra requirements: -*-
       ],
