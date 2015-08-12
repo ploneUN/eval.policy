@@ -1,8 +1,12 @@
 Changelog
 =========
 
+1.0a12dev0 (unreleased)
+----------------------
 
-1.0a11 (unreleased)
+- 
+
+1.0a11 (2015-08-11)
 -------------------
 
 - Add atreal.usersinout as a requirement
