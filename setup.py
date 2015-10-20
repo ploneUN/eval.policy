@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '1.0a12dev0'
+version = '1.0a13dev0'
 
 setup(name='eval.policy',
       version=version,
@@ -40,6 +40,7 @@ setup(name='eval.policy',
           'ilo.goodpractice',
           'atreal.usersinout',
 	  'collective.kuputabs',
+          'ilo.qa',
           # -*- Extra requirements: -*-
       ],
       extras_require={
