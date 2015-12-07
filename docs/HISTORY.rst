@@ -1,10 +1,10 @@
 Changelog
 =========
 
-1.0a13dev0 (unreleased)
+1.0b1 (2015-12-07)
 -----------------------
 
--
+- Add plone.app.changeownership
 
 1.0a12 (2015-10-20)
 ----------------------
