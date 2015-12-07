@@ -41,6 +41,7 @@ setup(name='eval.policy',
           'atreal.usersinout',
 	  'collective.kuputabs',
           'ilo.qa',
+          'plone.app.changeownership',
           # -*- Extra requirements: -*-
       ],
       extras_require={
