@@ -42,6 +42,7 @@ setup(name='eval.policy',
 	  'collective.kuputabs',
           'ilo.qa',
           'plone.app.changeownership',
+          'eval.email_consultants',
           # -*- Extra requirements: -*-
       ],
       extras_require={
