@@ -43,6 +43,7 @@ setup(name='eval.policy',
           'ilo.qa',
           'plone.app.changeownership',
           'eval.email_consultants',
+          'eval.dms',
           # -*- Extra requirements: -*-
       ],
       extras_require={
