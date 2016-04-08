@@ -46,6 +46,7 @@ setup(name='eval.policy',
           'eval.dms',
           'z3c.unconfigure',
           'redomino.tokenrole',
+          'ilo.cop',
           # -*- Extra requirements: -*-
       ],
       extras_require={
