@@ -251,7 +251,9 @@ class Renderer(base.Renderer):
         missions_with_reports = self._search(
                 portal_type='ploneun.missions.mission',
                 ploneun_has_missionreport=True)
-        return int((len(missions_with_reports) * 1.0)/len(all_missions) * 100)
+        if len(all_missions) > 0:
+            return int((len(missions_with_reports) * 1.0)/len(all_missions) * 100)
+        return 0
 
 
 class AddForm(base.AddForm):
