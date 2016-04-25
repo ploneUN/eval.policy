@@ -1,6 +1,34 @@
+<style>
+    #rep-stat > li{
+        border-bottom: dashed 1px #ccc;
+    }
+    #rep-stat > li:last-child{
+        border-bottom: none;
+    }
+    
+    /*style for progress bar*/
+    progress[value]{appearance:none;border:none;width:100%;height:20px;background-color:#f5f5f5;border-radius:3px;box-shadow:0 2px 3px rgba(0,0,0,.5) inset;color:#4169e1;position:relative;margin:0 0 1.5em}
+progress[value]::-webkit-progress-bar{background-color:#f5f5f5;border-radius:3px;box-shadow:0 2px 3px rgba(0,0,0,.5) inset}
+progress[value]::-webkit-progress-value{position:relative;background-size:35px 20px,100% 100%,100% 100%;border-radius:3px;animation:animate-stripes 5s linear infinite}
+@keyframes animate-stripes {
+100%{background-position:-100px 0}
+}
+progress[value]::-webkit-progress-value:after{content:'';position:absolute;width:5px;height:5px;top:7px;right:7px;background-color:#fff;border-radius:100%}
+progress[value]::-moz-progress-bar{background-image:-moz-linear-gradient(135deg,transparent,transparent 33%,rgba(0,0,0,.1) 33%,rgba(0,0,0,.1) 66%,transparent 66%),-moz-linear-gradient(top,rgba(255,255,255,.25),rgba(0,0,0,.2)),-moz-linear-gradient(left,#09c,#f44);background-size:35px 20px,100% 100%,100% 100%;border-radius:3px}
+.progress-bar{background-color:#f5f5f5;border-radius:3px;box-shadow:0 2px 3px rgba(0,0,0,.5) inset;width:100%;height:20px}
+.progress-bar span{background-color:#4169e1;border-radius:3px;display:block;text-indent:-9999px}
+p[data-value]{position:relative}
+p[data-value]:after{content:attr(data-value) '%';position:absolute;right:0}
+.html5::-webkit-progress-value,.python::-webkit-progress-value{background-image:-webkit-linear-gradient(135deg,transparent,transparent 33%,rgba(0,0,0,.1) 33%,rgba(0,0,0,.1) 66%,transparent 66%),-webkit-linear-gradient(top,rgba(255,255,255,.25),rgba(0,0,0,.2)),-webkit-linear-gradient(left,#09c,#f44)}
+.css3::-webkit-progress-value,.php::-webkit-progress-value{background-image:-webkit-linear-gradient(135deg,transparent,transparent 33%,rgba(0,0,0,.1) 33%,rgba(0,0,0,.1) 66%,transparent 66%),-webkit-linear-gradient(top,rgba(255,255,255,.25),rgba(0,0,0,.2)),-webkit-linear-gradient(left,#09c,#ff0)}
+.jquery::-webkit-progress-value,.node-js::-webkit-progress-value{background-image:-webkit-linear-gradient(135deg,transparent,transparent 33%,rgba(0,0,0,.1) 33%,rgba(0,0,0,.1) 66%,transparent 66%),-webkit-linear-gradient(top,rgba(255,255,255,.25),rgba(0,0,0,.2)),-webkit-linear-gradient(left,#09c,#690)}
+.html5::-moz-progress-bar,.php::-moz-progress-bar{background-image:-moz-linear-gradient(135deg,transparent,transparent 33%,rgba(0,0,0,.1) 33%,rgba(0,0,0,.1) 66%,transparent 66%),-moz-linear-gradient(top,rgba(255,255,255,.25),rgba(0,0,0,.2)),-moz-linear-gradient(left,#09c,#f44)}
+.css3::-moz-progress-bar,.php::-moz-progress-bar{{/gradientbackgroundwithstripes/background-image:-moz-linear-gradient(135deg,transparent,transparent 33%,rgba(0,0,0,.1) 33%,rgba(0,0,0,.1) 66%,transparent 66%),-moz-linear-gradient(top,rgba(255,255,255,.25),rgba(0,0,0,.2)),-moz-linear-gradient(left,#09c,#ff0)}
+.jquery::-moz-progress-bar,.node-js::-moz-progress-bar{background-image:-moz-linear-gradient(135deg,transparent,transparent 33%,rgba(0,0,0,.1) 33%,rgba(0,0,0,.1) 66%,transparent 66%),-moz-linear-gradient(top,rgba(255,255,255,.25),rgba(0,0,0,.2)),-moz-linear-gradient(left,#09c,#690)}
+    </style>
+
 <dl class="portlet portletMissionReportStatistics"
     i18n:domain="eval.policy">
-
     <dt class="portletHeader">
         <span class="portletTopLeft"></span>
         Mission Report Statistics
@@ -8,24 +36,36 @@
     </dt>
 
     <dd class="portletItem" tal:define="data view/cache">
-        <div>
-            <h2>Total: <span tal:content="data/total"></span></h2>
-        <h3>Missions With Reports: <span tal:content="data/percent_missions_with_reports"></span>%</h3>
-        </div>
-
-        <h2>Top Themes</h2>
-
-        <ul>
-        <li tal:repeat="item data/themes_international">
-            <span tal:content="python: str(item[0])"></span>
-            (<span tal:content="python: str(item[1])"></span>)
-        </li>
-        </ul>
-        <h2>Top Destinations</h2>
-        <ul>
-            <li  tal:repeat="item data/international">
-                <span tal:content="python:view.country_title(item[0])"></span>
-                (<span tal:content="python:item[1]"></span>)
+        
+        <ul id="rep-stat">
+            <li>
+                <h4>Total: <span tal:content="data/total"></span></h4>
+                <p style="width:100%" tal:attributes="data-value data/percent_missions_with_reports">Missions With Reports</p>
+                <progress max="100" tal:attributes="value data/percent_missions_with_reports" class="html5">
+                    <div class="progress-bar">
+                        <span tal:content="data/percent_missions_with_reports"></span>
+                    </div>
+                </progress>
+    
+            <!--<h3>Missions With Reports: <span tal:content="data/percent_missions_with_reports"></span>%</h3>-->
+            </li>
+            <li>
+                <h4>Top Themes</h4>
+                <ul>
+                    <li tal:repeat="item data/themes_international">
+                        <span tal:content="python: str(item[0])"></span>
+                        (<span tal:content="python: str(item[1])"></span>)
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h4>Top Destinations</h4>
+                <ul>
+                    <li  tal:repeat="item data/international">
+                        <span tal:content="python:view.country_title(item[0])"></span>
+                        (<span tal:content="python:item[1]"></span>)
+                    </li>
+                </ul>
             </li>
         </ul>
 
