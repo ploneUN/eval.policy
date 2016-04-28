@@ -52,7 +52,6 @@
    <permission-role>Authenticated</permission-role>
   </permission-map>
   <permission-map name="Manage token role" acquired="False">
-   <permission-role>Anonymous</permission-role>
    <permission-role>Owner</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Site Administrator</permission-role>
