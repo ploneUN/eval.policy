@@ -173,8 +173,43 @@
    <permission-role>Site Administrator</permission-role>
   </permission-map>
  </state>
- <transition transition_id="publish" title="Submit" new_state="published" trigger="USER" before_script="" after_script="">
+ <transition transition_id="hide" title="Hide" new_state="private" trigger="USER" before_script="" after_script="">
+  <action url="%(content_url)s/content_status_modify?workflow_action=hide" category="workflow" icon="">Hide</action>
+  <guard>
+  </guard>
+ </transition>
+ <transition transition_id="publish" title="Publish" new_state="published" trigger="USER" before_script="" after_script="">
   <action url="%(content_url)s/content_status_modify?workflow_action=publish" category="workflow" icon="">Publish</action>
+  <guard>
+  </guard>
+ </transition>
+ <transition transition_id="publish_externally" title="Externally Publish" new_state="external" trigger="USER" before_script="" after_script="">
+  <action url="%(content_url)s/content_status_modify?workflow_action=publish_externally" category="workflow" icon="">Publish Externally</action>
+  <guard>
+  </guard>
+ </transition>
+ <transition transition_id="publish_internally" title="Internally Publish" new_state="internally_published" trigger="USER" before_script="" after_script="">
+  <action url="%(content_url)s/content_status_modify?workflow_action=publish_internally" category="workflow" icon="">Internally Publish</action>
+  <guard>
+  </guard>
+ </transition>
+ <transition transition_id="reject" title="Reject" new_state="internal" trigger="USER" before_script="" after_script="">
+  <action url="%(content_url)s/content_status_modify?workflow_action=reject" category="workflow" icon="">Reject</action>
+  <guard>
+  </guard>
+ </transition>
+ <transition transition_id="retract" title="Retract" new_state="internal" trigger="USER" before_script="" after_script="">
+  <action url="%(content_url)s/content_status_modify?workflow_action=retract" category="workflow" icon="">Retract</action>
+  <guard>
+  </guard>
+ </transition>
+ <transition transition_id="show_internally" title="Show Internally" new_state="internal" trigger="USER" before_script="" after_script="">
+  <action url="%(content_url)s/content_status_modify?workflow_action=show_internally" category="workflow" icon="">Show Internally</action>
+  <guard>
+  </guard>
+ </transition>
+ <transition transition_id="submit" title="Submit" new_state="pending" trigger="USER" before_script="" after_script="">
+  <action url="%(content_url)s/content_status_modify?workflow_action=submit" category="workflow" icon="">Submit</action>
   <guard>
   </guard>
  </transition>
