@@ -48,6 +48,7 @@ setup(name='eval.policy',
           'redomino.tokenrole',
           'ilo.cop',
           'eval.registration',
+          'plone.app.contenttypes',
           # -*- Extra requirements: -*-
       ],
       extras_require={
