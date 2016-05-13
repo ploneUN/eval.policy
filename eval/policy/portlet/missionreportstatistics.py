@@ -106,7 +106,7 @@ class Renderer(base.Renderer):
         if not country:
             return ''
         return resolve_value(self.context, country,
-                            'ploneun.vocabulary.country')
+                            'ilo.vocabulary.countries')
 
     def theme_title(self, theme):
         if not theme:
@@ -139,16 +139,16 @@ class Renderer(base.Renderer):
         themes = []
 
         for r in reports:
-            values = r.ilo_themes
+            values = r.getObject().ilo_themes
             if values == Missing.Value:
                 continue
             themes += values
 
         #We currently filter out Other until it's not top item after
         #adding new themes to MissionReports
-
+        
         top = self.mostcommon(themes)
-
+        
         return top[:3] + ([('',0)] * (3-len(top[:3])))
 
     def _top_three_countries(self, reports):
@@ -157,16 +157,17 @@ class Renderer(base.Renderer):
         countries = []
 
         for r in reports:
-            value = r.ploneun_country
+            value = r.getObject().mission_location
             if value == Missing.Value:
                 continue
-            countries.append(value)
+            #countries.append(value)
+            countries += value
 
         #We currently filter out Other until it's not top item after
         #adding new themes to MissionReports
-
+        
         top = self.mostcommon(countries)
-
+        
         return top[:3] + ([('',0)] * (3-len(top[:3])))
 
 
@@ -207,7 +208,7 @@ class Renderer(base.Renderer):
                 'query': '/'.join(facility.getPhysicalPath()),
                 'depth': 10
             },
-            'portal_type': 'ploneun.missions.mission',
+            'portal_type': 'ploneun.missions.missionreport',
 # XXX enable this later
             'review_state': 'internally_published'
         }
@@ -219,31 +220,31 @@ class Renderer(base.Renderer):
         return len(reports)
 
     def _international_count(self):
-        reports = self._search(ploneun_missionscope='International')
+        reports = self._search(mission_type='International')
         return len(reports)
 
     def _domestic_count(self):
-        reports = self._search(ploneun_missionscope='National')
+        reports = self._search(mission_type='Domestic')
         return len(reports)
 
     def _themes(self):
-        reports = self._search(ploneun_missionscope='International')
+        reports = self._search(mission_type='International')
         return self._top_three_themes(reports)
 
     def _themes_international(self):
-        reports = self._search(ploneun_missionscope='International')
+        reports = self._search(mission_type='International')
         return self._top_three_themes(reports)
 
     def _themes_domestic(self):
-        reports = self._search(ploneun_missionscope='National')
+        reports = self._search(mission_type='Domestic')
         return self._top_three_themes(reports)
 
     def _domestic(self):
-        reports = self._search(ploneun_missionscope='National')
+        reports = self._search(mission_type='Domestic')
         return self._top_three_countries(reports)
 
     def _international(self):
-        reports = self._search(ploneun_missionscope='International')
+        reports = self._search(mission_type='International')
         return self._top_three_countries(reports)
 
     def _percent_missions_with_reports(self):
