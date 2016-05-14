@@ -1,6 +1,9 @@
 <?xml version="1.0"?>
 <object name="portal_workflow" meta_type="Plone Workflow Tool">
-  <object name="policy_intranet_workflow" meta_type="Workflow"/>
+  <object name="eval_intranet" meta_type="Workflow"/>	
   <bindings>
+    <default>
+      <bound-workflow workflow_id="eval_intranet"/>
+    </default>
  </bindings>
 </object>
