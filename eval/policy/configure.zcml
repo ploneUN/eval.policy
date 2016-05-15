@@ -10,6 +10,7 @@
     i18n_domain="eval.policy">
 
     <includeDependencies package="." />
+    <include file="permissions.zcml" />
     <grok:grok package="." />
     <i18n:registerTranslations directory="locales" />
 
