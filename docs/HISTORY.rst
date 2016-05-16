@@ -1,6 +1,10 @@
 Changelog
 =========
 
+1.1 - may 16, 2016
+---------------------
+-release prod level (updated workflow)
+
 1.0b2dev1
 -----------------------
 -updated permissions, workflow, added new packages and modified ploneun views

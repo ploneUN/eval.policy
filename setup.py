@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '1.0b2dev1'
+version = '1.1'
 
 setup(name='eval.policy',
       version=version,
