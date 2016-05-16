@@ -1,6 +1,10 @@
 Changelog
 =========
 
+1.0b2dev1
+-----------------------
+-updated permissions, workflow, added new packages and modified ploneun views
+
 1.0b2dev0 (unreleased)
 -----------------------
 
