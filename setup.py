@@ -46,7 +46,7 @@ setup(name='eval.policy',
           'eval.workspace',
           'z3c.unconfigure',
           'redomino.tokenrole',
-          'ilo.cop',
+#          'ilo.cop',
           'eval.registration',
           'plone.app.contenttypes',
           # -*- Extra requirements: -*-
