@@ -210,7 +210,7 @@ class Renderer(base.Renderer):
             },
             'portal_type': 'ploneun.missions.missionreport',
 # XXX enable this later
-            'review_state': 'internally_published'
+            'review_state': 'shared_intranet'
         }
         query.update(kwargs)
         return self.context.portal_catalog(query)
