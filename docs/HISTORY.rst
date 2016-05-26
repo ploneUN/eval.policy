@@ -1,8 +1,14 @@
 Changelog
 =========
+1.1.2 - may 26, 2016
+-------------------
+-changed state for report
+
 1.1.1-may 17,2016
--changed version no
 -----------------------
+-changed version no
+
+
 1.1.0 - may 17, 2016
 ---------------------
 commented out ilo.cop
