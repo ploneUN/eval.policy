@@ -1,5 +1,9 @@
 Changelog
 =========
+1.1.3 - may 26, 2016
+------------
+-removed ilo.cop
+
 1.1.2 - may 26, 2016
 -------------------
 -changed state for report

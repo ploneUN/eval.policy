@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '1.1.2'
+version = '1.1.3'
 
 setup(name='eval.policy',
       version=version,
@@ -46,7 +46,7 @@ setup(name='eval.policy',
           'eval.workspace',
           'z3c.unconfigure',
           'redomino.tokenrole',
-          'ilo.cop',
+#          'ilo.cop',
           'eval.registration',
           'plone.app.contenttypes',
           # -*- Extra requirements: -*-
