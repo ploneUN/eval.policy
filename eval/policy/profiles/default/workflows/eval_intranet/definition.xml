@@ -36,6 +36,7 @@
    <permission-role>Site Administrator</permission-role>
   </permission-map>
   <permission-map name="Copy or Move" acquired="True">
+   <permission-role>Owner</permission-role>
   </permission-map>
   <permission-map name="List folder contents" acquired="False">
    <permission-role>Editor</permission-role>
