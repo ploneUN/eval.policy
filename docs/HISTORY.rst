@@ -1,5 +1,9 @@
 Changelog
 =========
+1.1.3v3 -sept 21
+--
+-enabled ilo.cop
+
 1.1.3v2 - sept 20 2016
 -----
 -added ilo.cop
