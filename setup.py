@@ -49,6 +49,7 @@ setup(name='eval.policy',
           'ilo.cop',
           'eval.registration',
           'plone.app.contenttypes',
+          'eval.cop',
           # -*- Extra requirements: -*-
       ],
       extras_require={
