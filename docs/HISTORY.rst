@@ -1,5 +1,8 @@
 Changelog
 =========
+1.1.3v4 -feb17
+-added eval.cop
+--------
 1.1.3v3 -sept 21
 --
 -enabled ilo.cop
