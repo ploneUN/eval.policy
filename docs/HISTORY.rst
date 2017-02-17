@@ -1,5 +1,8 @@
 Changelog
 =========
+1.1.3v5 -feb17
+collective.contentleadimage
+
 1.1.3v4 -feb17
 -added eval.cop
 --------
