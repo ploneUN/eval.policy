@@ -50,6 +50,7 @@ setup(name='eval.policy',
           'eval.registration',
           'plone.app.contenttypes',
           'eval.cop',
+          'collective.contentleadimage',
           # -*- Extra requirements: -*-
       ],
       extras_require={
